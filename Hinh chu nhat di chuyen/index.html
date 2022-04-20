@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hinh CN di chuyen</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="450" style="border:3px solid green"></canvas>
+    <script>
+        var moveHcn=document.getElementById("myCanvas");
+        hcn=moveHcn.getContext('2d');
+        hcn.fillStyle = "#0000ff";
+        hcn.fillRect(30,20,150,100);
+
+        var vitriY = 20;
+        speed = 1;
+        function move(){
+            hcn.clearRect(30, vitriY,150,100);
+            if (vitriY >= 350) speed = -3;
+            if (vitriY <= 0) speed = 1;
+            vitriY +=speed;
+            hcn.beginPath();
+            hcn.fillStyle = "#0000ff";
+            hcn.fillRect(30,vitriY,150,100);
+        }
+        setInterval(move,10);
+    </script>
+</body>
+</html>

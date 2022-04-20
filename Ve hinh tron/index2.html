@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funny Canvas</title>
+</head>
+<body>
+    <canvas id="canvas-frame" width="600" height="400" style="border:2px solid violet" ></canvas>
+    <script>
+        var canvasFrame = document.getElementById("canvas-frame");
+        var ctx = canvasFrame.getContext("2d");
+        var gradient = ctx.createLinearGradient(0,200,0,0);
+        gradient.addColorStop(0,"#f4a815");
+        gradient.addColorStop(0.4,"#ff7100");
+        gradient.addColorStop(0,"#ff0000");
+
+        ctx.fillStyle=gradient;
+        ctx.fillRect(0,0,600,400);
+
+        ctx.beginPath();
+        ctx.arc(300,200,60,0,2*Math.PI);
+        ctx.fillStyle="yellow";
+        ctx.fill();
+        
+    </script>
+</body>
+</html>
